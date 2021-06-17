@@ -1,0 +1,43 @@
+ion-header{
+    --ion-background-color: #4E3976;
+}
+
+ion-content{
+    --ion-background-color: var(--ion-color-water);
+}
+
+
+.img-box {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 130px;
+    width: 130px;
+    display: flex;
+    justify-content: center;
+}
+
+ion-icon {
+    color: white;
+  }
+
+ion-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: white;
+  }
+
+
+  .head {
+    position: absolute;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: black;
+  }
+ 

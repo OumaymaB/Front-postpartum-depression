@@ -22,7 +22,15 @@ const routes: Routes = [
   {
     path: 'edit-account',
     loadChildren: () => import('./edit-account/edit-account.module').then( m => m.EditAccountPageModule)
+  },  {
+    path: 'profil',
+    loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
   },
+  {
+    path: 'profil-follower',
+    loadChildren: () => import('./profil-follower/profil-follower.module').then( m => m.ProfilFollowerPageModule)
+  },
+
 
 ];
 
