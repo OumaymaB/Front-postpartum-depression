@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-edit-account',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditAccountPage implements OnInit {
 
-  constructor() { }
+  constructor(private router : Router) { }
 
   ngOnInit() {
+  }
+
+  passwordLink(){
+   this.router.navigate(['/edit-password']);
   }
 
 }
