@@ -16,7 +16,7 @@ ion-content{
 }
 
 ion-icon {
-  color: white;
+  color: rgb(43, 40, 40);
 }
 
 ion-title {
@@ -90,4 +90,8 @@ margin-left: 0%;
 position: relative;
 top: 2%;
 margin-left: 33%;
+}
+
+ion-menu-button{
+  color: white;
 }
