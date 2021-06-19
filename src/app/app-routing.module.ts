@@ -14,6 +14,14 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+<<<<<<< HEAD
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+
+=======
   },
   {
     path: 'edit-password',
@@ -22,7 +30,8 @@ const routes: Routes = [
   {
     path: 'edit-account',
     loadChildren: () => import('./edit-account/edit-account.module').then( m => m.EditAccountPageModule)
-  },  {
+  },
+  {
     path: 'profil',
     loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
   },
@@ -32,6 +41,7 @@ const routes: Routes = [
   },
 
 
+>>>>>>> a734a9a2bea78455d2142a343f31a5a35d8fd5b6
 ];
 
 @NgModule({

@@ -1,0 +1,106 @@
+  <ion-header>
+    <ion-toolbar class="tool">
+      <ion-title>
+        Sign Up
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-content  [fullscreen]="true" padding>
+  
+    <ion-slides #signupSlider>
+  
+      <ion-slide>
+        <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+  
+        <ion-list lines="none">
+        <form [formGroup]="slideOneForm">
+        
+                <ion-item>
+                    <ion-label class="labels" position="stacked">PRENOM</ion-label>
+                    <ion-input formControlName="prenom" type="text"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="!slideOneForm.controls.prenom.valid  && (slideOneForm.controls.prenom.dirty || submitAttempt)">
+                  <p>Veuillez entrer le prenom</p>
+              </ion-item>
+                <ion-item>
+                    <ion-label class="labels" position="stacked">NOM</ion-label>
+                    <ion-input formControlName="nom" type="text"></ion-input>
+                </ion-item>
+                <ion-item *ngIf="!slideOneForm.controls.nom.valid  && (slideOneForm.controls.nom.dirty || submitAttempt)">
+                  <p>Veuillez entrer le nom</p>
+              </ion-item>
+                <ion-item>
+                    <ion-label class="labels" position="stacked">DATE DE NAISSANCE</ion-label>
+                    <ion-datetime formControlName="dateNaissance"
+                    min="1990-01-05" 
+                    displayFormat="YYYY-DD-MM"></ion-datetime>
+                </ion-item>
+                <ion-item *ngIf="!slideOneForm.controls.dateNaissance.valid  && (slideOneForm.controls.dateNaissance.dirty || submitAttempt)">
+                  <p>Veuillez entrer la date de naissance</p>
+              </ion-item>
+            </form>
+           
+        
+        </ion-list>
+      </ion-slide>
+  
+      <ion-slide>
+        <ion-list lines="none">
+        
+          <form [formGroup]="slideTwoForm">
+      
+              <ion-item>
+                  <ion-label position="stacked" class="labels">NOM D'UTILISATEUR</ion-label>
+                  <ion-input formControlName="nomuser" type="text"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!slideTwoForm.controls.nomuser.valid  && (slideTwoForm.controls.nomuser.dirty || submitAttempt)">
+                <p>Veuillez entrer un Pseudo nom valide</p>
+            </ion-item>
+              <ion-item>
+                  <ion-label position="stacked" class="labels">E-MAIL</ion-label>
+                  <ion-input formControlName="email" type="text"></ion-input>
+              </ion-item>
+              <ion-item *ngIf="!slideTwoForm.controls.email.valid  && (slideTwoForm.controls.email.dirty || submitAttempt)">
+                <p>Veuillez entrer un email valide.</p>
+            </ion-item>
+              <ion-item>
+                  <ion-label position="stacked" class="labels">MOT DE PASSE</ion-label>
+                  <ion-input formControlName="motdepasse" type="password"  placeholder="mot de passe" ></ion-input>
+                  <ion-input formControlName="motdepasseconfirm" type="password"  placeholder="confirme ton mot de passe" ></ion-input>
+                  <ion-item *ngIf="!slideTwoForm.controls.motdepasse.valid  && (slideTwoForm.controls.motdepasse.dirty || submitAttempt)">
+                    <p>Mots de passe erroné, essayez de nouveau</p>
+                </ion-item>
+                </ion-item>
+          </form>
+      </ion-list>
+      </ion-slide>
+  
+      <ion-slide>
+        <ion-list lines="none">
+          <form [formGroup]="slideThreeForm">
+              <ion-item>
+                  <ion-label position="stacked" class="labels">PHOTO DE PROFIL</ion-label>
+                  <ion-input formControlName="photo" type="text"></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-label position="stacked" class="labels">BIO</ion-label>
+                <ion-textarea formControlName="bio"></ion-textarea>
+            </ion-item>
+          </form>
+      </ion-list>
+      <ion-button expand="full" color="primary" (click)="save()">Create Account!</ion-button>
+      </ion-slide>
+    </ion-slides>
+  
+  </ion-content>
+  <ion-footer>
+    <ion-toolbar class="footer">
+      <ion-buttons slot="start">
+        <ion-button (click)="prev()" style="color: #4E3976; font-weight: 700;"><ion-icon slot="start" name="arrow-back"></ion-icon> Précédent</ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button (click)="next()" style="color: #4E3976; font-weight: 700;">Suivant<ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
