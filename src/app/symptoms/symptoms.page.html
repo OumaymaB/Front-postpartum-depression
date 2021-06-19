@@ -6,8 +6,42 @@
 </ion-header>
 
 <ion-content>
-  <div class="container main" [fullscreen]="true">
-
-
+  <div class="container main">
+    <ion-list lines="none">
+      <ion-item style="padding: 0;">
+        <ion-searchbar color="light"></ion-searchbar>
+        <ion-button fill="clear" style="border-bottom: 1px solid white;">
+          <ion-icon slot="start" name="arrow-up" style="color: white;"></ion-icon>A
+        </ion-button>
+     </ion-item>
+       <ion-card>    
+        <ion-card-content>
+          <ion-item class="imagecontainer">
+            <ion-list>
+              <ion-text class="symptomNames">Symptom Name</ion-text>
+              <img src="assets/undraw_baby_ja7a.png"> 
+            </ion-list>
+          </ion-item>
+         <ion-text class="textcontainer">
+           This is content, without any paragraph or header tags,
+          within an ion-card-content element. 
+         </ion-text>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>    
+        <ion-card-content>
+          <ion-item class="imagecontainer">
+            <ion-list>
+              <ion-text class="symptomNames">Symptom Name</ion-text>
+              <img src="assets/undraw_motherhood_7htu.png"> 
+            </ion-list>
+          </ion-item>
+         <ion-text class="textcontainer">
+           This is content, without any paragraph or header tags,
+          within an ion-card-content element. 
+         </ion-text>
+        </ion-card-content>
+      </ion-card>
+    </ion-list>
   </div>
 </ion-content>
