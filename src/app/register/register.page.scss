@@ -17,13 +17,14 @@ ion-content{
     --ion-background-color: #FFCDB6;
 }
 ion-header{
-    --ion-background-color: #FFFFFF;
+    --ion-background-color: #FFCDB6;
     width: 75%;
     margin-top: 10%;
     margin-bottom: 20%;
 }
 .tool{
     border-radius: 0px 30px 30px 0px;
+    --ion-background-color: #FFFFFF!important;
 }
 
 ion-input[type=text], ion-input[type=password]{
