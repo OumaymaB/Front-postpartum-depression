@@ -59,6 +59,10 @@ const routes: Routes = [
     path: 'accueil',
     loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
   },
+  {
+    path: 'add-publication',
+    loadChildren: () => import('./add-publication/add-publication.module').then( m => m.AddPublicationPageModule)
+  },
 
 
 
