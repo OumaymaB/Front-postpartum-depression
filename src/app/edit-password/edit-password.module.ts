@@ -17,4 +17,6 @@ import { EditPasswordPage } from './edit-password.page';
   ],
   declarations: [EditPasswordPage]
 })
-export class EditPasswordPageModule {}
+export class EditPasswordPageModule {
+  
+}
