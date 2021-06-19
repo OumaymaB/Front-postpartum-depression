@@ -21,6 +21,8 @@ ion-content{
   #container{
     position: relative;
     top: 15%;
+    width: 70%;
+    margin-left: 15%;
   }
 
   #passwordLink{
@@ -32,4 +34,12 @@ ion-content{
   ion-icon{
       color : var(--ion-color-purple);
   }
+
+  .labels{
+    --color: #4E3976;
+    font-weight: 600;
+    font-family: Poppins;
+    font-size: larger;
+}
+
 
