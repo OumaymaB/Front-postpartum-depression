@@ -1,11 +1,12 @@
 <ion-content [fullscreen]="true">
-  <img src="assets/logo.png" alt="logo">
-
+  <div id="img">
+    <img src="assets/logo.png" alt="logo">
+  </div>
 
 <div class="buttons">
 <ion-button id="inscrire" expand="block" shape="round" [routerLink]="['/register']">S'INSCRIRE</ion-button>
 <br>
-<ion-button id="connecter" expand="block" shape="round">SE CONNECTER</ion-button>
+<ion-button (click)="connecter()" id="connecter" expand="block" shape="round">SE CONNECTER</ion-button>
 </div>
 
 </ion-content>

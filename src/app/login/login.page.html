@@ -1,20 +1,29 @@
 <ion-content>
-  <img src="assets/logo.png" alt="logo">
-
-  <ion-item >
-    <ion-label color="light">Email</ion-label> 
-    <ion-input color="light" type="mail" placeholder="Adresse email"></ion-input>
-  </ion-item>
+  <div id="img">
+    <img src="assets/logo.png" alt="logo">
+  </div>
   
-  <ion-item>
-    <ion-label color="light">Mot de passe</ion-label>
-    <ion-input color="light" type="password" placeholder="Mot de passe"></ion-input>
-  </ion-item>
-  <ion-item lines="none">
-    <ion-button color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
-  </ion-item>
+  <div class="container" id="container">
+    <ion-item>
+      <ion-input color="light" type="password" placeholder="  Email">
+        <ion-icon name="person-sharp" slot="start"></ion-icon>
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input color="light" type="password" placeholder="  Mot de passe">
+        <ion-icon name="lock-closed-sharp"></ion-icon>
+      </ion-input>
+    </ion-item>
+    <br>
+    <ion-item lines="none">
+      <ion-button id="passwordLink" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
+    </ion-item>
+  
+    <ion-button  id="connecter" expand="block" shape="round">SE CONNECTER</ion-button>
+  </div>
 
-  <ion-button id="connecter" expand="block" shape="round">SE CONNECTER</ion-button>
+
 
 </ion-content>
 

@@ -14,11 +14,34 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+<<<<<<< HEAD
+  },
+  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
 
+=======
+  },
+  {
+    path: 'edit-password',
+    loadChildren: () => import('./edit-password/edit-password.module').then( m => m.EditPasswordPageModule)
+  },
+  {
+    path: 'edit-account',
+    loadChildren: () => import('./edit-account/edit-account.module').then( m => m.EditAccountPageModule)
+  },
+  {
+    path: 'profil',
+    loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
+  },
+  {
+    path: 'profil-follower',
+    loadChildren: () => import('./profil-follower/profil-follower.module').then( m => m.ProfilFollowerPageModule)
+  },
+
+
+>>>>>>> a734a9a2bea78455d2142a343f31a5a35d8fd5b6
 ];
 
 @NgModule({
