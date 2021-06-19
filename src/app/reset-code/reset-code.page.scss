@@ -1,0 +1,97 @@
+.t{
+    position: absolute;
+    width: 328px;
+    height: 277px;
+    left: 20px;
+    top: 50px;
+    font-family: Prosto One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19.369px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    }
+    
+    .u{
+    position: absolute;
+    width: 350px;
+    height: 277px;
+    left: 90px;
+    top: 60px;
+    font-family: Prosto One;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19.369px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color:red;
+    }
+    
+    .buttonSend{
+        position: absolute;
+        width:180px;
+        left: 23%;
+        right: 30%;
+        top: 75%;
+        bottom: 20%;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #FFFFFF;
+        --ion-color-secondary: #4e3976;
+        }
+        
+        .l{
+        position: absolute;
+        width:300px;
+        left: 20%;
+        right: 40%;
+        top: 55%;
+        bottom: 90.37%;
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 19.369px;
+        line-height: 29px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        color: #4E3976;
+        }
+        
+        .i{
+        position: absolute;
+        width:200px;
+        left:20%;
+        right:10%;
+        top: 64%;
+        bottom: 100%;
+        border: 0.5px solid #4E3976;
+        }
+    
+        .r{
+            position: absolute;
+            width:25px;
+            left:20%;
+            right:10%;
+            top: 60%;
+            bottom: 100%;
+        }
+
+        ion-content{
+            --ion-background-color:#FFCDB6;        ;
+        }
+    
+        ion-button{
+            --ion-button-color:#4E3976;
+        }
