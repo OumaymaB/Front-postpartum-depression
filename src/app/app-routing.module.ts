@@ -16,13 +16,23 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'symptoms',
+    loadChildren: () => import('./symptoms/symptoms.module').then( m => m.SymptomsPageModule)
+  },
+
+  {
     path: 'edit-password',
     loadChildren: () => import('./edit-password/edit-password.module').then( m => m.EditPasswordPageModule)
   },
   {
     path: 'edit-account',
     loadChildren: () => import('./edit-account/edit-account.module').then( m => m.EditAccountPageModule)
-  },  {
+  },
+  {
     path: 'profil',
     loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
   },
