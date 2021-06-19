@@ -26,14 +26,17 @@ ion-content{
 }
 
 .buttons{
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
+  position: relative;
+  top: 30%;
+  width: 50%;
   height: 100%;
+  margin-left: 25%;
+  
 }
 ion-button :active{
 color: none;
 }
+
+
 
 
