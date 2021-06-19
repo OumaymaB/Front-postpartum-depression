@@ -36,14 +36,13 @@ ion-icon {
 
 #img{
 
-    display: flex;
-    justify-content: center;
     position: relative;
-    top: 3%;
+    top: -10%;
     border-radius: 50%;
-    overflow: hidden;
-    height: 90px;
-    width: 90px;
+   overflow: hidden;
+    height: 120px;
+    width: 120px;
+    margin-left: 0%;
 
   }
 
@@ -61,3 +60,16 @@ ion-item{
     --background : white;
 
 }
+
+#title{
+    position: relative;
+    top: 2%;
+    margin-left: 33%;
+  }
+  
+  .bar{
+    --ion-background-color:#ffffff;
+ }
+ ion-menu-button{
+    color: white;
+ }
