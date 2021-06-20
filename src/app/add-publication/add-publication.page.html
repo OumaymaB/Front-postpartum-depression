@@ -9,7 +9,11 @@
   
     <ion-card-content>
       <ion-item>
-        <ion-textarea rows="20" placeholder="Comment se passe ta journée...?"></ion-textarea>
+        <ion-textarea type="text" rows="20" maxlength="15" placeholder="Comment se passe ta journée...?">
+          <ion-button fill="clear" id="attach">
+            <ion-icon id="color-icon" size="large" name="attach-outline"></ion-icon>
+          </ion-button>
+        </ion-textarea>
       </ion-item>
     </ion-card-content>
 
