@@ -6,8 +6,7 @@
     </ion-toolbar>
   </ion-header>
   
-  <ion-content  [fullscreen]="true" padding>
-  
+  <ion-content fullscreen="true">
     <ion-slides #signupSlider>
   
       <ion-slide>
@@ -89,7 +88,7 @@
             </ion-item>
           </form>
       </ion-list>
-      <ion-button expand="full" color="primary" (click)="save()">Create Account!</ion-button>
+      <ion-button id="create" expand="block" (click)="save()">Create Account!</ion-button>
       </ion-slide>
     </ion-slides>
   

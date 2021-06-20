@@ -1,15 +1,73 @@
 ion-header{
-margin-bottom: 3em;
-box-shadow: none;
-padding: 0.2em 0.2em 0.2em 0.2em;
-border-bottom: none;
+margin-top: 2em;;
+margin-bottom: 2em;
+padding: 0;
 }
 ion-content{
     --ion-background-color: #D5D8FF;
+    padding: 1em 2em 0em 2em;
 }
 ion-title{
     margin-right: 5em;
+    font-weight: 700;
+    font-family: Poppins;
+    color: #4E3976;
 }
 ion-icon{
     color: #4E3976;
+}
+.main{
+    --ion-background-color: #4E3976;
+    width: 90%;
+    height: 100%;
+    margin-left: 1em;
+    border-radius: 10px 10px 0px 0px;
+
+}
+.symptomNames{
+    font-family: Poppins;
+    color: #4E3976;
+    font-size: 0.6em;
+    font-weight: bold;
+    margin-left: 2em;
+}
+ion-card{
+    --ion-background-color: #FFCDB6;
+     padding: 0!important;
+     border-radius: 10px 0px 0px 10px;
+}
+ion-button{
+    color: white;
+    font-size: 1rem;
+    width: 18%;
+}
+.imagecontainer{
+ --ion-background-color: #FFFFFF;
+ display: inline-block;
+ width: 50%;
+ height: 100%;
+ margin-right: 0.5em;
+}
+ion-card-content{
+    padding: 0!important;
+    margin: 0!important;
+    display: inline-block;
+}
+img{
+    width: 7em;
+    height: 6.5em;
+}
+.textcontainer{
+   display: inline-block;
+   text-align: left;
+    width: 40%;
+    height: 100%;
+    font-size: 0.9em;
+    font-family: Poppins;
+    font-weight: 700;
+    color: white;
+}
+ion-searchbar{
+   margin-right: 1.5em;
+   border-radius: 10px 10px 10px 10px;
 }
