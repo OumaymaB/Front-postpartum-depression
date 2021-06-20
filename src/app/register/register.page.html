@@ -80,7 +80,7 @@
           <form [formGroup]="slideThreeForm">
               <ion-item>
                   <ion-label position="stacked" class="labels text-align-center">Clique ici pour choisir ta photo</ion-label>
-                  <ion-input formControlName="photo" type="file"></ion-input>
+                  <ion-input formControlName="photo" type="file" (change)="onFileSelected($event)"></ion-input>
               </ion-item>
               <ion-item>
                 <ion-label position="stacked" class="labels">BIO</ion-label>
