@@ -26,7 +26,17 @@ ion-header{
     border-radius: 0px 30px 30px 0px;
     --ion-background-color: #FFFFFF!important;
 }
-
+ion-input[type=file]{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
 ion-input[type=text], ion-input[type=password]{
     margin: 0.5em 0.5em 0.5em 0.2em;
     border-bottom: solid #FFFFFF 1px;
