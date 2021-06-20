@@ -1,9 +1,26 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>add-publication</ion-title>
-  </ion-toolbar>
-</ion-header>
+
 
 <ion-content>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Nouvelle publication</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-item>
+        <ion-textarea rows="20" placeholder="Comment se passe ta journée...?"></ion-textarea>
+      </ion-item>
+    </ion-card-content>
+
+    <ion-toolbar >
+      <ion-buttons  slot="start">
+        <ion-button (click)="annuler()" style="background-color: #4E3976; color: white; border-radius: 9%; font-weight: 700;">Annuler</ion-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button  style="background-color: #4E3976; color: white; border-radius: 9%; font-weight: 700;">Publier</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-card>
 
 </ion-content>
