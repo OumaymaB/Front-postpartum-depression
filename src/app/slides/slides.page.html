@@ -1,0 +1,24 @@
+<ion-content>
+  <ion-slides pager="true" [options]="slideOpts">
+    <ion-slide>
+      <div>
+        <img src="assets/venus1.png"  id="img1">
+        <img src="assets/venus2.png"  id="img2">
+        <img src="assets/welcome.png"  id="img3">
+        <img src="assets/VENUS PLANET.png" style="margin-top: 30%;">
+      </div>
+    </ion-slide>
+    <ion-slide style="margin-top: 10%;">
+      <div >
+          <img src="assets/welcome.png" alt="welcome" >
+          <img src="assets/BIENVENUE.png">
+          <img src="assets/VOUS.png" style="margin-top: 10%;" >
+          <ion-toolbar (click)="next()">
+            <ion-buttons slot="end" style="margin-top: 30%;" >
+              <ion-button style="color: #4E3976; font-weight: 700;">Suivant<ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+            </ion-buttons>
+          </ion-toolbar>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
