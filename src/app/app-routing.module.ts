@@ -75,7 +75,11 @@ const routes: Routes = [
   {
     path: 'add-publication',
     loadChildren: () => import('./add-publication/add-publication.module').then( m => m.AddPublicationPageModule)
+  },  {
+    path: 'tasks',
+    loadChildren: () => import('./tasks/tasks.module').then( m => m.TasksPageModule)
   }
+
 
 
 
