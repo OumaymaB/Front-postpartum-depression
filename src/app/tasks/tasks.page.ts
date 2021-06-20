@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { CalendarComponent } from 'ionic2-calendar';
 
 @Component({
   selector: 'app-tasks',
@@ -7,6 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TasksPage implements OnInit {
 
+  eventSource= [];
+  viewTitle: string;
+  calendar={
+    mode: 'month',
+    currentDate: new Date(),
+  };
+
+  @ViewChild(CalendarComponent) myCal: CalendarComponent;
   constructor() { }
 
   ngOnInit() {
