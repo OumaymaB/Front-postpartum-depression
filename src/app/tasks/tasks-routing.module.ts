@@ -7,6 +7,10 @@ const routes: Routes = [
   {
     path: '',
     component: TasksPage
+  },
+  {
+    path: 'task-modal',
+    loadChildren: () => import('./task-modal/task-modal.module').then( m => m.TaskModalPageModule)
   }
 ];
 
