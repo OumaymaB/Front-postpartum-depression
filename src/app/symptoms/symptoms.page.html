@@ -1,6 +1,6 @@
 <ion-header class="ion-no-border">
   <ion-toolbar class="toolhead">
-    <ion-button fill="clear" class="buttonback"><ion-icon slot="start" name="arrow-back" [routerLink]="['/profil']"></ion-icon></ion-button>
+    <ion-button fill="clear"><ion-icon slot="start" name="arrow-back" style="color: #4E3976!important;"></ion-icon></ion-button>
     <ion-title slot="end">SYMPTOMES</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,7 +10,9 @@
     <ion-list lines="none">
       <ion-item style="padding: 0;">
         <ion-searchbar color="light"></ion-searchbar>
-        <ion-button fill="clear" style="border-bottom: 1px solid white;">
+        <ion-button fill="clear" style="border-bottom: 1px solid white;  color: white;
+        font-size: 1rem;
+        width: 18%;">
           <ion-icon slot="start" name="arrow-up" style="color: white;"></ion-icon>A
         </ion-button>
      </ion-item>
@@ -22,9 +24,21 @@
               <img src="assets/undraw_baby_ja7a.png"> 
             </ion-list>
           </ion-item>
-         <ion-text class="textcontainer">
-           This is content, without any paragraph or header tags,
-          within an ion-card-content element. 
+         <ion-text class="textcontainer"><p>Th is is content, without any paragraph or header tags,
+          within an ion-card-content element. </p> 
+         </ion-text>
+        </ion-card-content>
+      </ion-card>
+      <ion-card>    
+        <ion-card-content>
+          <ion-item class="imagecontainer">
+            <ion-list>
+              <ion-text class="symptomNames">Symptom Name</ion-text>
+              <img src="assets/undraw_motherhood_7htu.png"> 
+            </ion-list>
+          </ion-item>
+         <ion-text class="textcontainer"><p>Th is is content, without any paragraph or header tags,
+          within an ion-card-content element. </p> 
          </ion-text>
         </ion-card-content>
       </ion-card>
@@ -37,8 +51,8 @@
             </ion-list>
           </ion-item>
          <ion-text class="textcontainer">
-           This is content, without any paragraph or header tags,
-          within an ion-card-content element. 
+          <p>Th is is content, without any paragraph or header tags,
+            within an ion-card-content element. </p> 
          </ion-text>
         </ion-card-content>
       </ion-card>

@@ -13,9 +13,6 @@ ion-title{
     font-family: Poppins;
     color: #4E3976;
 }
-ion-icon{
-    color: #4E3976;
-}
 .main{
     --ion-background-color: #4E3976;
     width: 90%;
@@ -35,11 +32,6 @@ ion-card{
     --ion-background-color: #FFCDB6;
      padding: 0!important;
      border-radius: 10px 0px 0px 10px;
-}
-ion-button{
-    color: white;
-    font-size: 1rem;
-    width: 18%;
 }
 .imagecontainer{
  --ion-background-color: #FFFFFF;
@@ -70,4 +62,7 @@ img{
 ion-searchbar{
    margin-right: 1.5em;
    border-radius: 10px 10px 10px 10px;
+}
+ion-text{
+    padding: 0!important;
 }
