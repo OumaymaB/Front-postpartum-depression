@@ -55,14 +55,12 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  },  {
+  },
+  {
     path: 'accueil',
     loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
   },
-<<<<<<< HEAD
-=======
   {
-<<<<<<< HEAD
     path: 'add-comment',
     loadChildren: () => import('./add-comment/add-comment.module').then( m => m.AddCommentPageModule)
   },
@@ -74,12 +72,10 @@ const routes: Routes = [
     path: 'delete-comment',
     loadChildren: () => import('./delete-comment/delete-comment.module').then( m => m.DeleteCommentPageModule)
   },
-=======
+  {
     path: 'add-publication',
     loadChildren: () => import('./add-publication/add-publication.module').then( m => m.AddPublicationPageModule)
-  },
->>>>>>> aadac4c15f192cb70f4fa85837b114314f9fce01
->>>>>>> 8679a36e3713b2927dd375136cedb571b60e616d
+  }
 
 
 
