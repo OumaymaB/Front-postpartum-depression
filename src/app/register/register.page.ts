@@ -13,6 +13,7 @@ export class RegisterPage{
   public slideOneForm: FormGroup;
 	public slideTwoForm: FormGroup;
   public slideThreeForm: FormGroup;
+  selectedFile=null;
 
 	public submitAttempt: boolean = false;
   constructor(public formBuilder: FormBuilder) { 
@@ -39,7 +40,7 @@ export class RegisterPage{
 
     this.slideThreeForm = formBuilder.group({
       bio: [''],
-      photo: ['']
+      photo: [this.selectedFile]
       });
     }
 
@@ -72,12 +73,12 @@ export class RegisterPage{
           console.log(this.slideThreeForm.value);
       }
   }
-  /*ngAfterViewInit() {
-    setTimeout(() => {
-      this.textinput.setFocus();
-      console.log("After the view");
-  }, 400);
-}*/
+ 
+  onFileSelected($event){
+   this.selectedFile=$event.target.files[0];
+    console.log(this.selectedFile);
+  }
+  
 }
 
 

@@ -55,14 +55,27 @@ const routes: Routes = [
   {
     path: 'search',
     loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
-  },  {
+  },
+  {
     path: 'accueil',
     loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
   },
   {
+    path: 'add-comment',
+    loadChildren: () => import('./add-comment/add-comment.module').then( m => m.AddCommentPageModule)
+  },
+  {
+    path: 'comments',
+    loadChildren: () => import('./comments/comments.module').then( m => m.CommentsPageModule)
+  },
+  {
+    path: 'delete-comment',
+    loadChildren: () => import('./delete-comment/delete-comment.module').then( m => m.DeleteCommentPageModule)
+  },
+  {
     path: 'add-publication',
     loadChildren: () => import('./add-publication/add-publication.module').then( m => m.AddPublicationPageModule)
-  },
+  }
 
 
 
