@@ -1,0 +1,42 @@
+:host ::ng-deep{
+    .table-bordered[_ngcontent-jto-c5] {
+        border: 1px solid #4E3976 !important;
+    }
+    .monthview-selected{
+        background-color: #4E3976;
+    }
+}
+ion-title{
+    margin-right: 3em;
+    font-weight: 700;
+    font-family: Poppins;
+    color: #4E3976;
+}
+ion-header{
+    padding: 0;
+    --ion-background-color: #D5D8FF;   
+    margin: 0!important; 
+}
+ion-toolbar{
+    margin: 0!important;
+    padding: 0!important;
+    --ion-background-color: #D5D8FF;
+}
+ion-footer{
+    --ion-background-color: #D5D8FF;
+}
+ion-content{
+    --ion-background-color: #D5D8FF;
+    padding: 0!important;
+}
+ion-list{
+    padding: 0!important;
+    margin: 0!important;
+}
+
+h2{
+    font-size: medium;
+}
+ion-icon{
+   color: #4E3976;
+}

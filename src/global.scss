@@ -29,3 +29,8 @@
     font-family: 'Poppins';    //This is what we are going to call
     src: url('./assets/fonts/Poppins-Regular.ttf');
   }
+  .cal-modal{
+    --height: 80%;
+    --border-radius: 10px;
+    padding: 2em;
+  }
