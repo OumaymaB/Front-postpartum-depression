@@ -2,18 +2,18 @@
   <div id="img">
     <img src="assets/logo.png" alt="logo">
   </div>
-  <form  id="container">
+  <form  id="container" [formGroup]="form" (ngSubmit)="submit()">
     <div class="container" >
       <ion-item>
         <ion-label position="stacked" class="labels">Email</ion-label>
-        <ion-input color="light" type="email" placeholder="  Email"  required>
+        <ion-input formControlName="email" color="light" type="email" placeholder="  Email" >
           <ion-icon name="person-sharp" slot="start"></ion-icon>
         </ion-input>
       </ion-item>
       <br>
       <ion-item>
         <ion-label position="stacked" class="labels">Mot de passe</ion-label>
-        <ion-input color="light" type="password" placeholder="  Mot de passe" required>
+        <ion-input  formControlName="password" color="light" type="password" placeholder="  Mot de passe" required>
           <ion-icon name="lock-closed-sharp"></ion-icon>
         </ion-input>
       </ion-item>
