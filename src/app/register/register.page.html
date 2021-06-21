@@ -10,34 +10,36 @@
     <ion-slides #signupSlider>
   
       <ion-slide>
-        <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+        <p *ngIf="submitAttempt" class="Warnings">Veuillez remplir toutes les informations correctement</p>
   
         <ion-list lines="none">
-        <form [formGroup]="slideOneForm">
+        <form [formGroup]="Form">
         
                 <ion-item>
                     <ion-label class="labels" position="stacked">PRENOM</ion-label>
-                    <ion-input formControlName="prenom" type="text"></ion-input>
+                    <ion-item *ngIf="!Form.controls.prenom.valid  && (Form.controls.prenom.dirty || submitAttempt)">
+                  <p  class="Warnings">Veuillez entrer le prenom</p>
+              </ion-item> <ion-input formControlName="prenom" type="text"></ion-input>
                 </ion-item>
-                <ion-item *ngIf="!slideOneForm.controls.prenom.valid  && (slideOneForm.controls.prenom.dirty || submitAttempt)">
-                  <p>Veuillez entrer le prenom</p>
-              </ion-item>
+               
                 <ion-item>
                     <ion-label class="labels" position="stacked">NOM</ion-label>
-                    <ion-input formControlName="nom" type="text"></ion-input>
-                </ion-item>
-                <ion-item *ngIf="!slideOneForm.controls.nom.valid  && (slideOneForm.controls.nom.dirty || submitAttempt)">
-                  <p>Veuillez entrer le nom</p>
+                     <ion-item *ngIf="!Form.controls.nom.valid  && (Form.controls.nom.dirty || submitAttempt)">
+                  <p  class="Warnings">Veuillez entrer le nom</p></ion-item>
+                  <ion-input formControlName="nom" type="text"></ion-input>
+                
+               
               </ion-item>
                 <ion-item>
                     <ion-label class="labels" position="stacked">DATE DE NAISSANCE</ion-label>
-                    <ion-datetime formControlName="dateNaissance"
+                   <ion-item *ngIf="!Form.controls.dateNaissance.valid  && (Form.controls.dateNaissance.dirty || submitAttempt)">
+                  <p class="Warnings">Veuillez entrer la date de naissance</p>
+              </ion-item>
+               <ion-datetime formControlName="dateNaissance"
                     min="1990-01-05" 
                     displayFormat="YYYY-DD-MM"></ion-datetime>
                 </ion-item>
-                <ion-item *ngIf="!slideOneForm.controls.dateNaissance.valid  && (slideOneForm.controls.dateNaissance.dirty || submitAttempt)">
-                  <p>Veuillez entrer la date de naissance</p>
-              </ion-item>
+                
             </form>
            
         
@@ -47,29 +49,32 @@
       <ion-slide>
         <ion-list lines="none">
         
-          <form [formGroup]="slideTwoForm">
+          <form [formGroup]="Form">
       
               <ion-item>
-                  <ion-label position="stacked" class="labels">NOM D'UTILISATEUR</ion-label>
-                  <ion-input formControlName="nomuser" type="text"></ion-input>
+                 
+             <ion-label position="stacked" class="labels">NOM D'UTILISATEUR</ion-label>
+                  <ion-item *ngIf="!Form.controls.nomuser.valid  && (Form.controls.nomuser.dirty || submitAttempt)">
+                <p class="Warnings">Veuillez entrer un Pseudo nom valide<br>*le pseudo nom ne doit contenir que des lettres</p>
+            </ion-item> <ion-input formControlName="nomuser" type="text"></ion-input>
               </ion-item>
-              <ion-item *ngIf="!slideTwoForm.controls.nomuser.valid  && (slideTwoForm.controls.nomuser.dirty || submitAttempt)">
-                <p>Veuillez entrer un Pseudo nom valide</p>
-            </ion-item>
+             
               <ion-item>
-                  <ion-label position="stacked" class="labels">E-MAIL</ion-label>
-                  <ion-input formControlName="email" type="text"></ion-input>
+                 
+            <ion-label position="stacked" class="labels">E-MAIL</ion-label>
+                 <ion-item *ngIf="!Form.controls.email.valid  && (Form.controls.email.dirty || submitAttempt)">
+                <p class="Warnings">Veuillez entrer un email valide.</p>
+            </ion-item>  <ion-input formControlName="email" type="text"></ion-input>
               </ion-item>
-              <ion-item *ngIf="!slideTwoForm.controls.email.valid  && (slideTwoForm.controls.email.dirty || submitAttempt)">
-                <p>Veuillez entrer un email valide.</p>
-            </ion-item>
+              
               <ion-item>
-                  <ion-label position="stacked" class="labels">MOT DE PASSE</ion-label>
-                  <ion-input formControlName="motdepasse" type="password"  placeholder="mot de passe" ></ion-input>
+                  
+                <ion-label position="stacked" class="labels">MOT DE PASSE</ion-label>
+                  <ion-item *ngIf="!Form.controls.motdepasse.valid  && (Form.controls.motdepasse.dirty || submitAttempt)">
+                    <p class="Warnings">Mots de passe erroné, essayez de nouveau</p>
+                </ion-item><ion-input formControlName="motdepasse" type="password"  placeholder="mot de passe" ></ion-input>
                   <ion-input formControlName="motdepasseconfirm" type="password"  placeholder="confirme ton mot de passe" ></ion-input>
-                  <ion-item *ngIf="!slideTwoForm.controls.motdepasse.valid  && (slideTwoForm.controls.motdepasse.dirty || submitAttempt)">
-                    <p>Mots de passe erroné, essayez de nouveau</p>
-                </ion-item>
+                  
                 </ion-item>
           </form>
       </ion-list>
@@ -77,7 +82,7 @@
   
       <ion-slide>
         <ion-list lines="none">
-          <form [formGroup]="slideThreeForm">
+          <form [formGroup]="Form">
               <ion-item>
                   <ion-label position="stacked" class="labels text-align-center">Clique ici pour choisir ta photo</ion-label>
                   <ion-input formControlName="photo" type="file" (change)="onFileSelected($event)"></ion-input>
