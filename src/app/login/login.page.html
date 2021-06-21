@@ -2,30 +2,36 @@
   <div id="img">
     <img src="assets/logo.png" alt="logo">
   </div>
-  
-  <div class="container" id="container">
-    <ion-item>
-      <ion-label position="stacked" class="labels">Email</ion-label>
-      <ion-input color="light" type="password" placeholder="  Email">
-        <ion-icon name="person-sharp" slot="start"></ion-icon>
-      </ion-input>
-    </ion-item>
-    <br>
-    <ion-item>
-      <ion-label position="stacked" class="labels">Mot de passe</ion-label>
-      <ion-input color="light" type="password" placeholder="  Mot de passe">
-        <ion-icon name="lock-closed-sharp"></ion-icon>
-      </ion-input>
-    </ion-item>
-    <br>
-    <ion-item lines="none">
-      <ion-button id="passwordLink" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
-    </ion-item>
-  
-    <ion-button  id="connecter" expand="block" shape="round">SE CONNECTER</ion-button>
-  </div>
+  <form  id="container">
+    <div class="container" >
+      <ion-item>
+        <ion-label position="stacked" class="labels">Email</ion-label>
+        <ion-input color="light" type="email" placeholder="  Email"  required>
+          <ion-icon name="person-sharp" slot="start"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <br>
+      <ion-item>
+        <ion-label position="stacked" class="labels">Mot de passe</ion-label>
+        <ion-input color="light" type="password" placeholder="  Mot de passe" required>
+          <ion-icon name="lock-closed-sharp"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <br>
+      <ion-item lines="none">
+        <ion-button routerLink="/forgot-password" id="passwordLink" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
+      </ion-item>
+    
+      <ion-button  id="connecter" expand="block" shape="round" type="submit">SE CONNECTER</ion-button>
+    </div>
+
+  </form>
+
 
 
 
 </ion-content>
+<ion-footer style="background-color: #FFCDB6;">
+  <p style="color: #4E3976; text-align: center; ">&copy;2021 Developed by venus crew</p>
+</ion-footer>
 
