@@ -14,6 +14,8 @@ export class LoginPage implements OnInit {
 
   form: FormGroup;
   user : any = {};
+  showmenu =  this.userService.islogin;
+  
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
@@ -37,7 +39,8 @@ export class LoginPage implements OnInit {
    localStorage.setItem("email", this.user.email);
    let jwt = "innovation "+this.user.jwt;
  localStorage.setItem("token",jwt)
- this.userService.islogin = true;
+this.showmenu = true;
+
 this.router.navigate(['/accueil']);
 
  },
@@ -46,4 +49,6 @@ this.router.navigate(['/accueil']);
  );
  
   }
+
+
 }
