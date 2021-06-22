@@ -2,6 +2,10 @@ import { Component,  Input,  ViewChild } from '@angular/core';
 import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { IonInput } from '@ionic/angular';
 import { MustMatch } from '../validators/passwd';
+import { RegisteruserService } from '../service/registeruser.service';
+import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+import { User } from '../model/user';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -11,45 +15,49 @@ export class RegisterPage{
   @ViewChild('signupSlider') signupSlider;
 
   public Form: FormGroup;
-	/*public slideTwoForm: FormGroup;
-  public slideThreeForm: FormGroup;*/
+  private toast: any;
   selectedFile=null;
+  users: User[];
 
 	public submitAttempt: boolean = false;
-  constructor(public formBuilder: FormBuilder) { 
+  constructor(public formBuilder: FormBuilder, 
+    public service: RegisteruserService, private mytoast: ToastController, private router: Router) { 
     this.Form = formBuilder.group({
-      prenom: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      nom: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      dateNaissance: [''],
-      nomuser: ['',Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
-      email: ['',
+      firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      dateBirth: ['',Validators.required],
+      userName: ['',Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      mail: ['',
       Validators.compose([
       Validators.required,
       Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])],
-       motdepasse: ['', Validators.compose([
+       password: ['', Validators.compose([
        Validators.minLength(5),
        Validators.required,
        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z0-9]+$')
       ])],
-      motdepasseconfirm: ['',Validators.required],
+      passwordconfirm: ['',Validators.required],
       bio: [''],
       photo: [this.selectedFile]      
   },{
-    validator: MustMatch('motdepasse','motdepasseconfirm')
+    validator: MustMatch('password','passwordconfirm')
   });
     } 
 
     save(){
-
       this.submitAttempt = true;
 
       if(!this.Form.valid){
           this.signupSlider.slideTo(0);
       } 
       else {
-          console.log("success!")
-          console.log(this.Form.value);
+          const val=this.Form.value;
+           this.service.createData(val).
+           subscribe( data=>{
+             this.showToast("Success Validation...");
+             this.router.navigate(['/profil']);
+           })
       }
   }
  
@@ -63,6 +71,13 @@ export class RegisterPage{
 
     prev(){
         this.signupSlider.slidePrev();
+    }
+
+    showToast(msg){
+      this.toast=this.mytoast.create({
+        message: msg,
+        duration: 2000
+      }).then((toastData)=>{console.log(toastData);toastData.present()});
     }
 }
 

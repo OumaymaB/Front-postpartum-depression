@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { IonicModule } from '@ionic/angular';
 
@@ -17,6 +18,7 @@ import { connectableObservableDescriptor } from 'rxjs/internal/observable/Connec
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forChild([
      { 
       path: '',
