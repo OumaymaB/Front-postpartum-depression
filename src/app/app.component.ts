@@ -31,4 +31,8 @@ removeExistingItem(key) {
   localStorage.removeItem(key);
   return true;
 }
+
+goToProfil(){
+  this.router.navigate(['profil'])
+}
 }

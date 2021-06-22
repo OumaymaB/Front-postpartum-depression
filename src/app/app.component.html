@@ -3,7 +3,7 @@
      <ion-header>
        <ion-toolbar>
          <ion-title>
-          <ion-item>
+          <ion-item (click)="goToProfil()">
             <ion-avatar slot="start">
               <img src="assets/pic.jpg" />
             </ion-avatar>
@@ -16,19 +16,19 @@
        <ion-list class="c">
          <ion-item>
           <img src="assets/actualite.png">
-           <ion-label class="l">ACTUALITE</ion-label>
+           <ion-label class="l" routerLink="/accueil">ACTUALITE</ion-label>
          </ion-item>
          <ion-item>
           <img src="assets/symptoms.png">
-          <ion-label class="l">SYMPTOMES</ion-label>
+          <ion-label class="l" routerLink="/symptoms">SYMPTOMES</ion-label>
         </ion-item>
         <ion-item>
           <img src="assets/selfcare.png">
-          <ion-label class="l">JUSTE POUR VOUS</ion-label>
+          <ion-label class="l" routerLink="/tasks">JUSTE POUR VOUS</ion-label>
         </ion-item>
         <ion-item>
           <img src="assets/settings.png">
-          <ion-label class="l">MON COMPTE</ion-label>
+          <ion-label class="l" routerLink="/edit-account">MON COMPTE</ion-label>
         </ion-item>
         <ion-item>
           <img src="assets/logout.png">
