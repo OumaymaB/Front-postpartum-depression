@@ -37,7 +37,7 @@ const routes: Routes = [
     loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
   },
   {
-    path: 'profil-follower',
+    path: 'profil-follower/:id',
     loadChildren: () => import('./profil-follower/profil-follower.module').then( m => m.ProfilFollowerPageModule)
   },
   {

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
+import { Observable, throwError } from 'rxjs';
+import { User } from '../model/User';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import { FormGroup } from '@angular/forms';
 export class UserService {
 
   public formData : FormGroup;
-  private url = 'http://localhost:8080/login';
+  private url = 'http://localhost:8080';
   islogin = false;
   admin=false;
   suser = false;
@@ -16,6 +18,19 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   login(email, password){
-    return this.http.post(`${this.url}`,{email, password});
+    return this.http.post(`${this.url}/login`,{email, password});
   }
+
+  getUser(id ): Observable<User>{
+    return this.http.get<User>(this.url+'/user/'+ id);
+  }
+
+  getPublication(user): Observable<User>{
+    return this.http.get<User>(this.url+'/publication');
+  }
+
+  getUsers(name): Observable<User>{
+    return this.http.get<User>(this.url+'/users/'+name);
+  }
+
 }

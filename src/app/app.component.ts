@@ -12,7 +12,10 @@ export class AppComponent {
   token:any;
   showmenu=true;
 
-  constructor(public userService : UserService, private router : Router,private http: HttpClient) {}
+ 
+  constructor(public userService : UserService, private router : Router) {
+
+  }
 
 
   logout(){

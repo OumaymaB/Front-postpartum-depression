@@ -8,7 +8,8 @@ import { HttpClient} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { AuthInterceptor } from './_helpers/auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,7 +17,13 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, FormsModule,
     ReactiveFormsModule,
     HttpClientModule],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [
+    {
+  provide : HTTP_INTERCEPTORS ,
+  useClass : AuthInterceptor,
+  multi : true
+  },{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+
   bootstrap: [AppComponent],
 })
 

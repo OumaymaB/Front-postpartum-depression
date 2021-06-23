@@ -4,21 +4,27 @@
       <ion-buttons class="menu" slot="start">
         <ion-menu-button menu="main-menu"></ion-menu-button>
       </ion-buttons>
-     <ion-searchbar class="bar" placeholder="Rechercher"></ion-searchbar>
-     <img src="assets/writing.png" (click)="publier()">
-     <img src="assets/notification.png">
+      <ion-buttons slot="end" fill="clear">
+        <ion-icon style="color: white;" size="large" name="search-sharp" (click)="goSearch()"></ion-icon>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <img src="assets/writing.png" (click)="publier()">
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <img src="assets/notification.png">
+      </ion-buttons>
     </ion-item>
     <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content>
-  <ion-card color="light">
+  <ion-card color="light" >
       <ion-item lines="none" class="tweet">
         <ion-avatar slot="start">
           <img src="assets/pic.jpg" />
         </ion-avatar>
         <ion-label>
-          <h2><b>Elon MYTO</b></h2>
+          <h2><b>{{user.user_Name}}</b></h2>
           <p>Il y a 14 heures</p>
         </ion-label>
       </ion-item>
