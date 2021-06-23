@@ -9,27 +9,26 @@
   <div class="container main">
     <ion-list lines="none">
       <ion-item style="padding: 0;">
-        <ion-searchbar color="light"></ion-searchbar>
-        <ion-button fill="clear" style="border-bottom: 1px solid white;  color: white;
+        <ion-searchbar color="light"  [(ngModel)]="filterTerm"></ion-searchbar>
+        <ion-button (click)=(sort) fill="clear" style="border-bottom: 1px solid white;  color: white;
         font-size: 1rem;
         width: 18%;">
-          <ion-icon slot="start" name="arrow-up" style="color: white;"></ion-icon>A
+          <ion-icon *ngIf="descendant==false" slot="start" name="arrow-up" style="color: white;"></ion-icon><ion-icon *ngIf="descendant==true" slot="start" name="arrow-down" style="color: white;"></ion-icon>A
         </ion-button>
      </ion-item>
-       <ion-card>    
+       <ion-card *ngFor="let symptom of symptoms | filter:filterTerm">    
         <ion-card-content>
           <ion-item class="imagecontainer">
             <ion-list>
-              <ion-text class="symptomNames">Symptom Name</ion-text>
-              <img src="assets/undraw_baby_ja7a.png"> 
+              <ion-text class="symptomNames"> {{symptom.name}}</ion-text>
+              <img src="assets/undraw_baby_ja7a.png" style="width: auto; height: auto;"> 
             </ion-list>
           </ion-item>
-         <ion-text class="textcontainer"><p>Th is is content, without any paragraph or header tags,
-          within an ion-card-content element. </p> 
+         <ion-text class="textcontainer ion-text-top"><p>{{symptom.description}}</p> 
          </ion-text>
         </ion-card-content>
       </ion-card>
-      <ion-card>    
+      <!--ion-card>    
         <ion-card-content>
           <ion-item class="imagecontainer">
             <ion-list>
@@ -55,7 +54,7 @@
             within an ion-card-content element. </p> 
          </ion-text>
         </ion-card-content>
-      </ion-card>
+      </ion-card-->
     </ion-list>
   </div>
 </ion-content>

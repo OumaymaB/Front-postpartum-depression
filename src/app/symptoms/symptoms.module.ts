@@ -7,14 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { SymptomsPageRoutingModule } from './symptoms-routing.module';
 
 import { SymptomsPage } from './symptoms.page';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    SymptomsPageRoutingModule
+    SymptomsPageRoutingModule,
+    Ng2SearchPipeModule
   ],
-  declarations: [SymptomsPage]
+  declarations: [SymptomsPage],
 })
 export class SymptomsPageModule {}
