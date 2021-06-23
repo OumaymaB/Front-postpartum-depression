@@ -5,7 +5,6 @@ import { MustMatch } from '../validators/passwd';
 import { RegisteruserService } from '../service/registeruser.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { User } from '../model/user';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
@@ -17,8 +16,7 @@ export class RegisterPage{
   public Form: FormGroup;
   private toast: any;
   selectedFile= null;
-  users: User[];
-
+  
 	public submitAttempt: boolean = false;
   constructor(public formBuilder: FormBuilder, 
     public service: RegisteruserService, private mytoast: ToastController, private router: Router) { 
