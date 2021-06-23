@@ -13,29 +13,29 @@
         <p *ngIf="submitAttempt" class="Warnings">Veuillez remplir toutes les informations correctement</p>
   
         <ion-list lines="none">
-        <form [formGroup]="Form">
+        <form [formGroup]="Form" >
         
                 <ion-item>
                     <ion-label class="labels" position="stacked">PRENOM</ion-label>
-                    <ion-item *ngIf="!Form.controls.prenom.valid  && (Form.controls.prenom.dirty || submitAttempt)">
+                    <ion-item *ngIf="!Form.controls.firstName.valid  && (Form.controls.firstName.dirty || submitAttempt)">
                   <p  class="Warnings">Veuillez entrer le prenom</p>
-              </ion-item> <ion-input formControlName="prenom" type="text"></ion-input>
+              </ion-item> <ion-input formControlName="firstName" type="text"></ion-input>
                 </ion-item>
                
                 <ion-item>
                     <ion-label class="labels" position="stacked">NOM</ion-label>
-                     <ion-item *ngIf="!Form.controls.nom.valid  && (Form.controls.nom.dirty || submitAttempt)">
+                     <ion-item *ngIf="!Form.controls.lastName.valid  && (Form.controls.lastName.dirty || submitAttempt)">
                   <p  class="Warnings">Veuillez entrer le nom</p></ion-item>
-                  <ion-input formControlName="nom" type="text"></ion-input>
+                  <ion-input formControlName="lastName" type="text"></ion-input>
                 
                
               </ion-item>
                 <ion-item>
                     <ion-label class="labels" position="stacked">DATE DE NAISSANCE</ion-label>
-                   <ion-item *ngIf="!Form.controls.dateNaissance.valid  && (Form.controls.dateNaissance.dirty || submitAttempt)">
+                   <ion-item *ngIf="!Form.controls.dateBirth.valid  && (Form.controls.dateBirth.dirty || submitAttempt)">
                   <p class="Warnings">Veuillez entrer la date de naissance</p>
               </ion-item>
-               <ion-datetime formControlName="dateNaissance"
+               <ion-datetime formControlName="dateBirth"
                     min="1990-01-05" 
                     displayFormat="YYYY-DD-MM"></ion-datetime>
                 </ion-item>
@@ -54,26 +54,26 @@
               <ion-item>
                  
              <ion-label position="stacked" class="labels">NOM D'UTILISATEUR</ion-label>
-                  <ion-item *ngIf="!Form.controls.nomuser.valid  && (Form.controls.nomuser.dirty || submitAttempt)">
+                  <ion-item *ngIf="!Form.controls.userName.valid  && (Form.controls.userName.dirty || submitAttempt)">
                 <p class="Warnings">Veuillez entrer un Pseudo nom valide<br>*le pseudo nom ne doit contenir que des lettres</p>
-            </ion-item> <ion-input formControlName="nomuser" type="text"></ion-input>
+            </ion-item> <ion-input formControlName="userName" type="text"></ion-input>
               </ion-item>
              
               <ion-item>
                  
             <ion-label position="stacked" class="labels">E-MAIL</ion-label>
-                 <ion-item *ngIf="!Form.controls.email.valid  && (Form.controls.email.dirty || submitAttempt)">
+                 <ion-item *ngIf="!Form.controls.mail.valid  && (Form.controls.mail.dirty || submitAttempt)">
                 <p class="Warnings">Veuillez entrer un email valide.</p>
-            </ion-item>  <ion-input formControlName="email" type="text"></ion-input>
+            </ion-item>  <ion-input formControlName="mail" type="text"></ion-input>
               </ion-item>
               
               <ion-item>
                   
                 <ion-label position="stacked" class="labels">MOT DE PASSE</ion-label>
-                  <ion-item *ngIf="!Form.controls.motdepasse.valid  && (Form.controls.motdepasse.dirty || submitAttempt)">
+                  <ion-item *ngIf="!Form.controls.password.valid  && (Form.controls.password.dirty || submitAttempt)">
                     <p class="Warnings">Mots de passe erroné, essayez de nouveau</p>
-                </ion-item><ion-input formControlName="motdepasse" type="password"  placeholder="mot de passe" ></ion-input>
-                  <ion-input formControlName="motdepasseconfirm" type="password"  placeholder="confirme ton mot de passe" ></ion-input>
+                </ion-item><ion-input formControlName="password" type="password"  placeholder="mot de passe" ></ion-input>
+                  <ion-input formControlName="passwordconfirm" type="password"  placeholder="confirme ton mot de passe" ></ion-input>
                   
                 </ion-item>
           </form>
