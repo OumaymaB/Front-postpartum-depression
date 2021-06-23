@@ -36,8 +36,9 @@ export class LoginPage implements OnInit {
  this.userService.login(val.email,val.password).subscribe(
  res =>{
    this.user = res;
-   localStorage.setItem("email", this.user.email);
-   let jwt = "innovation "+this.user.jwt;
+   console.log(res);
+   localStorage.setItem("id", this.user.user_id);
+   let jwt = this.user.token;
  localStorage.setItem("token",jwt)
 this.showmenu = true;
 

@@ -4,7 +4,9 @@
       <ion-buttons class="menu" slot="start">
         <ion-menu-button menu="main-menu"></ion-menu-button>
       </ion-buttons>
-     <ion-searchbar class="bar" placeholder="Rechercher"></ion-searchbar>
+     <ion-searchbar class="bar" placeholder="Rechercher"
+     #searchBox id="search-box" (input)="search(searchBox.value)"
+     ></ion-searchbar>
      <img src="assets/writing.png">
      <img src="assets/notification.png">
     </ion-item>
@@ -16,74 +18,11 @@
   <ion-list>
   </ion-list>
   <ion-list>
-    <ion-item>
+    <ion-item *ngFor="let u of users" >
       <ion-avatar slot="start">
         <img src="assets/pic.jpg" />
       </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
-      <img class="imge" src="assets/light-bulb.png">
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/pic.jpg" />
-      </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
-      <img class="imge" src="assets/light-bulb.png">
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/pic.jpg" />
-      </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
-      <img class="imge" src="assets/light-bulb.png">
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/pic.jpg" />
-      </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
-      <img class="imge" src="assets/light-bulb.png">
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/pic.jpg" />
-      </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
-      <img class="imge" src="assets/light-bulb.png">
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/pic.jpg" />
-      </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
-      <img class="imge" src="assets/light-bulb.png">
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/pic.jpg" />
-      </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
-      <img class="imge" src="assets/light-bulb.png">
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/pic.jpg" />
-      </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
-      <img class="imge" src="assets/light-bulb.png">
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/pic.jpg" />
-      </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
-      <img class="imge" src="assets/light-bulb.png">
-    </ion-item>
-    <ion-item>
-      <ion-avatar slot="start">
-        <img src="assets/pic.jpg" />
-      </ion-avatar>
-      <ion-label class="l">User Name</ion-label>
+      <ion-label (click)="goToProfil(u.id)" class="l">{{u.user_Name}}</ion-label>
       <img class="imge" src="assets/light-bulb.png">
     </ion-item>
   </ion-list>
