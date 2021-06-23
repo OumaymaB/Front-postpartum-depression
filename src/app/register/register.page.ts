@@ -16,7 +16,7 @@ export class RegisterPage{
 
   public Form: FormGroup;
   private toast: any;
-  selectedFile=null;
+  selectedFile= null;
   users: User[];
 
 	public submitAttempt: boolean = false;
@@ -53,17 +53,19 @@ export class RegisterPage{
       } 
       else {
           const val=this.Form.value;
-           this.service.createData(val).
+          let formdata=new FormData();
+          formdata.append('image',this.selectedFile,this.selectedFile.name);
+          this.service.uploadPhoto(formdata);
+          this.service.createData(val).
            subscribe( data=>{
              this.showToast("Success Validation...");
              this.router.navigate(['/profil']);
-           })
+           });
       }
   }
  
   onFileSelected($event){
    this.selectedFile=$event.target.files[0];
-    console.log(this.selectedFile);
   }
   next(){
     this.signupSlider.slideNext();
@@ -72,7 +74,6 @@ export class RegisterPage{
     prev(){
         this.signupSlider.slidePrev();
     }
-
     showToast(msg){
       this.toast=this.mytoast.create({
         message: msg,
