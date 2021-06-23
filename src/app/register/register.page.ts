@@ -70,7 +70,14 @@ export class RegisterPage{
   }
 
     prev(){
-        this.signupSlider.slidePrev();
+     // if(this.signupSlider.getActiveIndex()==0) 
+     this.signupSlider.getActiveIndex().then(index=>{
+       if(index==0){ 
+       this.router.navigate['/home'];
+       console.log(index);
+      }
+     });
+     this.signupSlider.slidePrev();        
     }
     showToast(msg){
       this.toast=this.mytoast.create({
