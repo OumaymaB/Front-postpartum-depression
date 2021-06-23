@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup} from '@angular/forms';
+import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
+import { UserService } from '../service/user.service';
 
 
 @Component({
@@ -8,9 +12,43 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  form: FormGroup;
+  user : any = {};
+  showmenu =  this.userService.islogin;
+  
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: HttpClient,
+    private router: Router,
+    public userService : UserService
+  ) {
   }
+
+  ngOnInit(): void {
+    this.form = this.formBuilder.group({
+      email: '',
+      password: ''
+    });
+  }
+
+  submit(): void {
+ const val = this.form.value;
+ this.userService.login(val.email,val.password).subscribe(
+ res =>{
+   this.user = res;
+   localStorage.setItem("email", this.user.email);
+   let jwt = "innovation "+this.user.jwt;
+ localStorage.setItem("token",jwt)
+this.showmenu = true;
+
+this.router.navigate(['/accueil']);
+
+ },
+ error => 
+ console.log(this.user)
+ );
+ 
+  }
+
 
 }

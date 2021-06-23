@@ -17,4 +17,8 @@ export class EditAccountPage implements OnInit {
    this.router.navigate(['/edit-password']);
   }
 
+  previous(){
+    this.router.navigate(['accueil']);
+  }
+
 }
