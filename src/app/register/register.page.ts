@@ -59,15 +59,15 @@ export class RegisterPage implements OnInit{
             (response) => {
               this.service.photo=response.path;
               console.log(response);
-              localStorage.setItem("photo", this.service.photo);
+              /*localStorage.setItem("photo", this.service.photo);
               let jwt = this.user.token;
-               localStorage.setItem("token",jwt);
+               localStorage.setItem("token",jwt);*/
               this.service.createData(val).subscribe(
                 (response)=> {
                   this.user = response;
                   console.log(response);
                   localStorage.setItem("id", this.user.user_id);
-                  //let jwt = this.user.token;
+                  let jwt = this.user.token;
                 localStorage.setItem("token",jwt);
                 this.showmenu = true;
                 this.router.navigate(['/accueil']);
