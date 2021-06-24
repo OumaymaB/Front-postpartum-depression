@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-add-comment',
@@ -7,7 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddCommentPage implements OnInit {
 
-  constructor() { }
+  user:any;
+  constructor(private router : Router, private token : UserService) { 
+    this.token.user.subscribe(x => this.user = x);
+  }
 
   ngOnInit() {
   }
