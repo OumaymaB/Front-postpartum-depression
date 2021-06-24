@@ -83,7 +83,13 @@ const routes: Routes = [
   {
     path: 'slides',
     loadChildren: () => import('./slides/slides.module').then( m => m.SlidesPageModule)
+  },
+  {
+    path: 'test-dpp',
+    loadChildren: () => import('./test-dpp/test-dpp.module').then( m => m.TestDppPageModule)
   }
+
+
 
 
 

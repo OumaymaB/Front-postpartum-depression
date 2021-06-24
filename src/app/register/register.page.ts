@@ -1,28 +1,28 @@
-import { Component,  Input,  ViewChild } from '@angular/core';
-import { Form, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { IonInput } from '@ionic/angular';
+import { Component,  OnInit,  ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../validators/passwd';
 import { RegisteruserService } from '../service/registeruser.service';
 import { Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
-import { AuthService } from '../services/auth.service';
 import { UserService } from '../service/user.service';
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage{
+export class RegisterPage implements OnInit{
   @ViewChild('signupSlider') signupSlider;
 
   public Form: FormGroup;
   private toast: any;
-  selectedFile= null;
+  selectedFile: File;
   user : any = {};
   showmenu =  this.userService.islogin;
 	public submitAttempt: boolean = false;
+
   constructor(public formBuilder: FormBuilder, 
-    public service: RegisteruserService, private mytoast: ToastController, private router: Router,public auth:AuthService, public userService : UserService) { 
+    public service: RegisteruserService, private mytoast: ToastController, private router: Router,public userService : UserService, private http :HttpClient) { 
     this.Form = formBuilder.group({
       firstName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
       lastName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
@@ -45,8 +45,9 @@ export class RegisterPage{
     validator: MustMatch('password','passwordconfirm')
   });
     } 
+  ngOnInit(): void {  }
 
-    save(){
+   save(){
       this.submitAttempt = true;
 
       if(!this.Form.valid){
@@ -54,25 +55,42 @@ export class RegisterPage{
       } 
       else {
           const val=this.Form.value;
-          let formdata=new FormData();
+          this.service.uploadPhoto(this.selectedFile).then(
+            (response) => {
+              this.service.photo=response.path;
+              console.log(response);
+              localStorage.setItem("photo", this.service.photo);
+              let jwt = this.user.token;
+               localStorage.setItem("token",jwt);
+              this.service.createData(val).subscribe(
+                (response)=> {
+                  this.user = response;
+                  console.log(response);
+                  localStorage.setItem("id", this.user.user_id);
+                  //let jwt = this.user.token;
+                localStorage.setItem("token",jwt);
+                this.showmenu = true;
+                this.router.navigate(['/accueil']);
+                }
+              );
+            }
+          );
+         /* let formdata=new FormData();
           formdata.append('image',this.selectedFile,this.selectedFile.name);
-          this.service.uploadPhoto(formdata);
-          this.service.createData(val).
+          this.service.createData(val,this.Form.value.mail,this.Form.value.password).
            subscribe( data=>{
-            // this.showToast("Success Validation...");
-             //this.router.navigate(['/profil']);
-             //this.auth.login(this.Form.value.mail,this.Form.value.password);
-            localStorage.setItem("id", this.user.user_id);
-            let jwt = this.user.token;
-            localStorage.setItem("token",jwt)
-            this.showmenu = true;
-            this.router.navigate(['/accueil']);
-           });
+             console.log('We hrereee');
+             localStorage.setItem("id", this.user.user_id);
+             let jwt = this.user.token;
+             localStorage.setItem("token",jwt)
+             this.showmenu = true;
+             this.router.navigate(['/accueil']);
+           });*/
       }
-  }
+    }
  
   onFileSelected($event){
-   this.selectedFile=$event.target.files[0];
+   this.selectedFile=<File>$event.target.files[0];
   }
   next(){
     this.signupSlider.slideNext();
@@ -82,7 +100,7 @@ export class RegisterPage{
      // if(this.signupSlider.getActiveIndex()==0) 
      this.signupSlider.getActiveIndex().then(index=>{
        if(index==0){ 
-       this.router.navigate['/home'];
+       this.router.navigate['/slides'];
        console.log(index);
       }
      });
