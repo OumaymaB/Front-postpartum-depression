@@ -19,7 +19,6 @@ export class RegisterPage{
   private toast: any;
   selectedFile= null;
   user : any = {};
-  showmenu =  this.userService.islogin;
 	public submitAttempt: boolean = false;
   constructor(public formBuilder: FormBuilder, 
     public service: RegisteruserService, private mytoast: ToastController, private router: Router,public auth:AuthService, public userService : UserService) { 
@@ -65,7 +64,6 @@ export class RegisterPage{
             localStorage.setItem("id", this.user.user_id);
             let jwt = this.user.token;
             localStorage.setItem("token",jwt)
-            this.showmenu = true;
             this.router.navigate(['/accueil']);
            });
       }

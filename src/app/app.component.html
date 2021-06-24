@@ -1,5 +1,5 @@
-<ion-app >
-   <ion-menu class="z" content-id="main" menuId="main-menu" side="start" type="overlay" *ngIf="showmenu">
+<ion-app > 
+   <ion-menu class="z" content-id="main" menuId="main-menu" side="start" type="overlay" *ngIf="!!user"> 
      <ion-header>
        <ion-toolbar>
          <ion-title>
@@ -7,7 +7,7 @@
             <ion-avatar slot="start">
               <img src="assets/pic.jpg" />
             </ion-avatar>
-            <ion-label class="un">{{user.user_Name}}</ion-label>
+            <ion-label class="un">{{user.user_Name}}</ion-label> 
           </ion-item>
          </ion-title>
        </ion-toolbar>

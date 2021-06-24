@@ -40,9 +40,8 @@ export class LoginPage implements OnInit {
    console.log(res);
    localStorage.setItem("id", this.user.user_id);
    let jwt = this.user.token;
+   this.userService.isLogin.next(true);
  localStorage.setItem("token",jwt)
- this.show.showmenu = true;
- console.log(this.show.showmenu);
 this.router.navigate(['/accueil']);
 
  },

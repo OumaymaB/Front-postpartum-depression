@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthentificationguardService } from './_helpers/AuthentificationGuardService';
 
 const routes: Routes = [
   {
@@ -21,24 +22,29 @@ const routes: Routes = [
   },
   {
     path: 'symptoms',
-    loadChildren: () => import('./symptoms/symptoms.module').then( m => m.SymptomsPageModule)
+    loadChildren: () => import('./symptoms/symptoms.module').then( m => m.SymptomsPageModule),
+    canActivate: [AuthentificationguardService]
   },
 
   {
     path: 'edit-password/:id',
-    loadChildren: () => import('./edit-password/edit-password.module').then( m => m.EditPasswordPageModule)
+    loadChildren: () => import('./edit-password/edit-password.module').then( m => m.EditPasswordPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'edit-account/:id',
-    loadChildren: () => import('./edit-account/edit-account.module').then( m => m.EditAccountPageModule)
+    loadChildren: () => import('./edit-account/edit-account.module').then( m => m.EditAccountPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'profil/:id',
-    loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
+    loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'profil-follower/:id',
-    loadChildren: () => import('./profil-follower/profil-follower.module').then( m => m.ProfilFollowerPageModule)
+    loadChildren: () => import('./profil-follower/profil-follower.module').then( m => m.ProfilFollowerPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'reset-code',
@@ -46,7 +52,8 @@ const routes: Routes = [
   },
   {
     path: 'reset-password',
-    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule)
+    loadChildren: () => import('./reset-password/reset-password.module').then( m => m.ResetPasswordPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'forgot-password',
@@ -54,31 +61,38 @@ const routes: Routes = [
   },
   {
     path: 'search',
-    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule)
+    loadChildren: () => import('./search/search.module').then( m => m.SearchPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'accueil',
-    loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule)
+    loadChildren: () => import('./accueil/accueil.module').then( m => m.AccueilPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'add-comment',
-    loadChildren: () => import('./add-comment/add-comment.module').then( m => m.AddCommentPageModule)
+    loadChildren: () => import('./add-comment/add-comment.module').then( m => m.AddCommentPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'comments',
-    loadChildren: () => import('./comments/comments.module').then( m => m.CommentsPageModule)
+    loadChildren: () => import('./comments/comments.module').then( m => m.CommentsPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'delete-comment',
-    loadChildren: () => import('./delete-comment/delete-comment.module').then( m => m.DeleteCommentPageModule)
+    loadChildren: () => import('./delete-comment/delete-comment.module').then( m => m.DeleteCommentPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'add-publication',
-    loadChildren: () => import('./add-publication/add-publication.module').then( m => m.AddPublicationPageModule)
+    loadChildren: () => import('./add-publication/add-publication.module').then( m => m.AddPublicationPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'tasks',
-    loadChildren: () => import('./tasks/tasks.module').then( m => m.TasksPageModule)
+    loadChildren: () => import('./tasks/tasks.module').then( m => m.TasksPageModule),
+    canActivate: [AuthentificationguardService]
   },
   {
     path: 'slides',

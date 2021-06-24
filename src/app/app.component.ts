@@ -10,32 +10,21 @@ import { UserService } from './service/user.service';
 })
 export class AppComponent {
   token:any;
-  public showmenu :any;
   currentUser : any;
   user: any;
 
  
-  constructor(public userService : UserService, private router : Router, private tok : UserService) {
-    this.currentUser = localStorage.getItem("id");
-    this.tok.getUser(this.currentUser).subscribe(
-      data => {
-        this.user = data;
-      },
-      err => {
-        console.log("error to get user");
-      }
-    );
+  constructor(public userService : UserService, private router : Router) {
+    this.userService.user.subscribe(x => this.user = x);
   }
-
 
 
   logout(){
     this.token = localStorage.getItem('token');
     console.log(this.token);
     if (this.removeExistingItem(this.token)){
-      this.userService.islogin = false;
-      this.showmenu =false;
-      console.log(this.showmenu);
+      this.userService.user.next(null);
+      this.userService.isLogin.next(false);
       this.router.navigate(['login'])
     }else
   console.log("Error");

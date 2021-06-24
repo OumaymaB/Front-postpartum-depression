@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { Observable, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, throwError } from 'rxjs';
 import { User } from '../model/User';
 
 @Injectable({
@@ -11,9 +11,10 @@ export class UserService {
 
   public formData : FormGroup;
   private url = 'http://localhost:8080';
-  islogin = false;
-  admin=false;
-  suser = false;
+
+
+  user = new BehaviorSubject<User>(null);
+  isLogin = new BehaviorSubject<boolean>(false);
  
   constructor(private http:HttpClient) { }
 
