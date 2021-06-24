@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { UserService } from './service/user.service';
 
@@ -10,7 +10,7 @@ import { UserService } from './service/user.service';
 })
 export class AppComponent {
   token:any;
-  showmenu=true;
+  showmenu :any;
 
  
   constructor(public userService : UserService, private router : Router) {
@@ -23,7 +23,8 @@ export class AppComponent {
     console.log(this.token);
     if (this.removeExistingItem(this.token)){
       this.userService.islogin = false;
-      this.showmenu = false;
+      this.showmenu =false;
+      console.log(this.showmenu);
       this.router.navigate(['login'])
     }else
   console.log("Error");

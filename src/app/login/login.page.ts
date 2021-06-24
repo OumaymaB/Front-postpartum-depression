@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import { UserService } from '../service/user.service';
+import { AppComponent } from '../app.component';
 
 
 @Component({
@@ -14,13 +15,13 @@ export class LoginPage implements OnInit {
 
   form: FormGroup;
   user : any = {};
-  showmenu =  this.userService.islogin;
   
   constructor(
     private formBuilder: FormBuilder,
     private http: HttpClient,
     private router: Router,
-    public userService : UserService
+    public userService : UserService,
+    private show : AppComponent
   ) {
   }
 
@@ -40,8 +41,8 @@ export class LoginPage implements OnInit {
    localStorage.setItem("id", this.user.user_id);
    let jwt = this.user.token;
  localStorage.setItem("token",jwt)
-this.showmenu = true;
-
+ this.show.showmenu = true;
+ console.log(this.show.showmenu);
 this.router.navigate(['/accueil']);
 
  },
