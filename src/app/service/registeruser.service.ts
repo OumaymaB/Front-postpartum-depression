@@ -3,6 +3,10 @@ import { User } from '../model/user';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Observable, BehaviorSubject } from 'rxjs';
+
+const httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
 @Injectable({
   providedIn: 'root'
 })
@@ -16,25 +20,23 @@ export class RegisteruserService {
   user=false;
   list: User[];
   message: string;
+  photo: string;
   constructor(private http: HttpClient) { }
-  getData(id:number): Observable<Object>{
-    return this.http.get(`${this.apiUrl1}/${id}`);
-  }
-  updateData(id:number,value: any): Observable<Object>{
-    return this.http.put(`${this.apiUrl1}/${id}`,{ responseType: 'text'});
-  }
-  createData(info: Object): Observable<Object>{
+  createData(info: Object){
     return this.http.post(`${this.apiUrl1}`,info);
   }
-  uploadPhoto(formdata: FormData){
-    let headers = new Headers();
+ /* uploadPhoto(formdata: FormData){
     this.http.post(`${this.apiUrl2}`, formdata)
         .subscribe(
             data => console.log('success'),
             error => console.log(error)
         )
-  }
-  getAll(id:number): Observable<any>{
-    return this.http.get(`${this.apiUrl1}`);
-  }
+  }*/
+  uploadPhoto(file: File): Promise<any> {
+    let link= 'http://localhost:8080/uploadPhoto/user';
+      let formdata: FormData = new FormData();
+      let path= 'C:\\Users\\youss\\upload\\user';
+      formdata.append('file', file ,file.name);
+      return this.http.post(link,formdata).toPromise();
+    }
 }
