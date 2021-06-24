@@ -1,3 +1,10 @@
+<ion-header > 
+  <ion-toolbar style=" --ion-background-color: #FFCDB6;" fill="clear"> 
+          <ion-buttons slot="start" >
+        <ion-button routerLink="/home" style="color: #4E3976; font-weight: 700;"><ion-icon slot="start" name="arrow-back"></ion-icon></ion-button>
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
 <ion-content>
   <div id="img">
     <img src="assets/logo.png" alt="logo">
@@ -6,7 +13,7 @@
     <div class="container" >
       <ion-item>
         <ion-label position="stacked" class="labels">Email</ion-label>
-        <ion-input formControlName="email" color="light" type="email" placeholder="  Email" >
+        <ion-input formControlName="email" color="light" type="email" placeholder="  Email" required>
           <ion-icon name="person-sharp" slot="start"></ion-icon>
         </ion-input>
       </ion-item>

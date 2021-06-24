@@ -25,7 +25,7 @@ export class UserService {
     return this.http.get<User>(this.url+'/user/'+ id);
   }
 
-  getPublication(user): Observable<User>{
+  getPublication(): Observable<User>{
     return this.http.get<User>(this.url+'/publication');
   }
 

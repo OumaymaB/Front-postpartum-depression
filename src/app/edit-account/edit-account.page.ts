@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import { UserService } from '../service/user.service';
 
 @Component({
   selector: 'app-edit-account',
@@ -7,10 +8,18 @@ import {Router} from '@angular/router';
   styleUrls: ['./edit-account.page.scss'],
 })
 export class EditAccountPage implements OnInit {
-
-  constructor(private router : Router) { }
+ user:any;
+  constructor(private router : Router, private token : UserService) { }
 
   ngOnInit() {
+    this.user = this.token.getUser(localStorage.getItem("id")).subscribe(
+      data => {
+        this.user = data;
+      },
+      err => {
+        console.log("error to get user");
+      }
+    );
   }
 
   passwordLink(){
