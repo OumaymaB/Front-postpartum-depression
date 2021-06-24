@@ -21,7 +21,6 @@ export class AppComponent {
 
   logout(){
     this.token = localStorage.getItem('token');
-    console.log(this.token);
     if (this.removeExistingItem(this.token)){
       this.userService.user.next(null);
       this.userService.isLogin.next(false);
