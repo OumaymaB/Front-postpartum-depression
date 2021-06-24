@@ -42,7 +42,6 @@ export class ProfilPage implements OnInit {
         text: 'Oui',
         handler: () => {
           this.deletePublication(id);    
-          window.location.reload();
         }
       }
     ]
