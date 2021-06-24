@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { UserService } from '../service/user.service';
 
 @Component({
@@ -9,10 +9,14 @@ import { UserService } from '../service/user.service';
 })
 export class EditAccountPage implements OnInit {
  user:any;
-  constructor(private router : Router, private token : UserService) { }
+ id:any;
+  constructor(private _Activatedroute:ActivatedRoute, private router : Router, private token : UserService) { }
 
   ngOnInit() {
-    this.user = this.token.getUser(localStorage.getItem("id")).subscribe(
+    this._Activatedroute.paramMap.subscribe(params => { 
+      this.id = params.get('id'); 
+  });
+    this.user = this.token.getUser(this.id).subscribe(
       data => {
         this.user = data;
       },
@@ -22,12 +26,13 @@ export class EditAccountPage implements OnInit {
     );
   }
 
-  passwordLink(){
-   this.router.navigate(['/edit-password']);
+  passwordLink(id){
+   this.router.navigate(['/edit-password',id]);
   }
 
   previous(){
     this.router.navigate(['accueil']);
   }
+
 
 }

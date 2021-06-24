@@ -10,11 +10,12 @@ import { UserService } from './service/user.service';
 })
 export class AppComponent {
   token:any;
-  showmenu :any;
+  currentUser : any;
+  user: any;
 
  
   constructor(public userService : UserService, private router : Router) {
-
+    this.userService.user.subscribe(x => this.user = x);
   }
 
 
@@ -22,9 +23,8 @@ export class AppComponent {
     this.token = localStorage.getItem('token');
     console.log(this.token);
     if (this.removeExistingItem(this.token)){
-      this.userService.islogin = false;
-      this.showmenu =false;
-      console.log(this.showmenu);
+      this.userService.user.next(null);
+      this.userService.isLogin.next(false);
       this.router.navigate(['login'])
     }else
   console.log("Error");
@@ -37,7 +37,12 @@ removeExistingItem(key) {
   return true;
 }
 
-goToProfil(){
-  this.router.navigate(['profil'])
+goToProfil(id){
+  this.router.navigate(['profil',id]);
 }
+
+goToAccount(id){
+  this.router.navigate(['edit-account',id]);
+}
+
 }

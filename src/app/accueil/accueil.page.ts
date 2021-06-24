@@ -13,15 +13,18 @@ export class AccueilPage implements OnInit {
 
   currentUser: any;
   user : any;
+  user_pub:any;
   publications : any = [];
   users : any = [];
-  constructor(private router : Router, private token : UserService) { }
+  constructor(private router : Router, private token : UserService) { 
+    this.token.user.subscribe(x => this.user = x);
+  }
   
   ngOnInit() {
     this.currentUser = localStorage.getItem("id");
     this.user = this.token.getUser(this.currentUser).subscribe(
       data => {
-        this.user = data;
+        this.token.user.next(data);
       },
       err => {
         console.log("error to get user");
@@ -44,6 +47,7 @@ export class AccueilPage implements OnInit {
     this.router.navigate(['search']);
   }
 
+ 
 
 
 }

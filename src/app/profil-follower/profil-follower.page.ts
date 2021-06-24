@@ -39,4 +39,11 @@ export class ProfilFollowerPage implements OnInit {
      // }
     }, 500);
   }
+
+  goSearch(){
+    this.router.navigate(['search']);
+  }
+
+
+
 }
