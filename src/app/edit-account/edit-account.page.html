@@ -22,42 +22,42 @@
 <div class="container" id="container">
   <ion-item>
     <ion-label class="labels">NOM D'UTILISATEUR</ion-label>
-    <ion-input color="light" type="text"></ion-input>
+    <ion-input color="dark" type="text" value="{{user.user_Name}}"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label class="labels">NOM</ion-label>
-    <ion-input color="light" type="text"></ion-input>
+    <ion-input color="dark" type="text" value="{{user.lastName}}"></ion-input>
   </ion-item>
  
   <ion-item>
     <ion-label class="labels">PRENOM</ion-label>
-    <ion-input color="light" type="text"></ion-input>
+    <ion-input color="dark" type="text" value="{{user.firstName}}"></ion-input>
   </ion-item>
 
   <ion-item>
     <ion-label class="labels">DATE DE NAISSANCE</ion-label>
     <ion-item>
-      <ion-datetime displayFormat="YYYY/MM/DD" ></ion-datetime>
+      <ion-datetime displayFormat="YYYY/MM/DD" value="{{user.dateBirth}}"></ion-datetime>
       <ion-icon slot="end" name="calendar-sharp"></ion-icon>
     </ion-item>
   </ion-item>
 
   <ion-item>
     <ion-label class="labels">Email</ion-label>
-    <ion-input color="light" type="mail"></ion-input>
+    <ion-input color="dark" type="mail" value="{{user.mail}}" readonly></ion-input>
   </ion-item>
  
   <ion-item>
     <ion-label class="labels">Mot de passe</ion-label>
-    <ion-button fill="clear" (click)="passwordLink()">
+    <ion-button fill="clear" (click)="passwordLink(user.id)">
       <ion-icon size="large" name="pencil-sharp"></ion-icon>
     </ion-button>
   </ion-item>
 
   <ion-item>
     <ion-label class="labels">BIO</ion-label>
-    <ion-input color="light" type="text"></ion-input>
+    <ion-input color="dark" type="text" value="{{user.bio}}"></ion-input>
   </ion-item>
 <br>
   <ion-button slot="end"  id="sauvegarder" expand="block" shape="round" >SAUVEGARDER</ion-button>

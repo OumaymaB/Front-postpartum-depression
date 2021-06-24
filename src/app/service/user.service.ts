@@ -29,6 +29,10 @@ export class UserService {
     return this.http.get<User>(this.url+'/publication');
   }
 
+  deletePub(id){
+    return this.http.delete(this.url+'/publication/user/'+id);
+  }
+
   getUsers(name): Observable<User>{
     return this.http.get<User>(this.url+'/users/'+name);
   }

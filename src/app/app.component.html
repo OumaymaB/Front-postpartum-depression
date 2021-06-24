@@ -3,11 +3,11 @@
      <ion-header>
        <ion-toolbar>
          <ion-title>
-          <ion-item (click)="goToProfil()">
+          <ion-item (click)="goToProfil(user.id)">
             <ion-avatar slot="start">
               <img src="assets/pic.jpg" />
             </ion-avatar>
-            <ion-label class="un"></ion-label>
+            <ion-label class="un">{{user.user_Name}}</ion-label>
           </ion-item>
          </ion-title>
        </ion-toolbar>
@@ -28,7 +28,7 @@
         </ion-item>
         <ion-item>
           <img src="assets/settings.png">
-          <ion-label class="l" routerLink="/edit-account">MON COMPTE</ion-label>
+          <ion-label class="l" (click)="goToAccount(user.id)">MON COMPTE</ion-label>
         </ion-item>
         <ion-item>
           <img src="assets/logout.png">

@@ -25,15 +25,15 @@ const routes: Routes = [
   },
 
   {
-    path: 'edit-password',
+    path: 'edit-password/:id',
     loadChildren: () => import('./edit-password/edit-password.module').then( m => m.EditPasswordPageModule)
   },
   {
-    path: 'edit-account',
+    path: 'edit-account/:id',
     loadChildren: () => import('./edit-account/edit-account.module').then( m => m.EditAccountPageModule)
   },
   {
-    path: 'profil',
+    path: 'profil/:id',
     loadChildren: () => import('./profil/profil.module').then( m => m.ProfilPageModule)
   },
   {

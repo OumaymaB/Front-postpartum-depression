@@ -13,6 +13,7 @@ export class AccueilPage implements OnInit {
 
   currentUser: any;
   user : any;
+  user_pub:any;
   publications : any = [];
   users : any = [];
   constructor(private router : Router, private token : UserService) { }
@@ -44,6 +45,7 @@ export class AccueilPage implements OnInit {
     this.router.navigate(['search']);
   }
 
+ 
 
 
 }
