@@ -27,7 +27,7 @@ export class AccueilPage implements OnInit {
         console.log("error to get user");
       }
     );
-    this.token.getPublication(this.user).subscribe(
+    this.token.getPublication().subscribe(
       data => {
         this.publications = data;
       },
