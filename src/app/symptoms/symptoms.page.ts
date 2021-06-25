@@ -16,28 +16,28 @@ export class SymptomsPage implements OnInit {
     "description": "Une minute, vous vous sentiez bien, puis à l'improviste, vous vous noyiez dans l'anxiété."
    },
     {"name": "Insomnie",
-     "description": "la mère n'est pas capable de dormir pendant que le bébé dort.Lorem ipsum dolor sit amet, consectetur adipiscing el"
+     "description": "la mère n'est pas capable de dormir pendant que le bébé dort. même s'il dort elle ne peut pas dormir"
     },
     {"name": "Hypersomnie",
-     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna"
+     "description": "la maman a un besoin excessif de sommeil, même si son bébé pleure et a besoin d'elle."
     },
     {"name": "Irritabilité et colère",
      "description": "Les plus petites choses me faisaient vibrerLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiukouu"
     },
     {"name": "Un sentiment d'être incapable",
-     "description": "La nouvelle mère a l’impression de ne pas être un bon parent.Lorem ipsum dolor sit amet, consectetur adipiscing el"
+     "description": "La nouvelle mère a l’impression de ne pas être un bon parent,elle ne se sent pas à la hauteur. "
     },
     {"name": "Peur de la mort",
-     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt"
+     "description": "Les mamans expéreince une forte angoisse concernant la mort subite des nourissons"
     },
     {"name": "Culpabilité",
-     "description": ""
+     "description": "La maman se sent comme si son bébé et sa famille seront mieux sans elle, et qu'ils méritent mieux"
     },
     {"name": "Idées suicidaires",
-     "description": ""
+     "description": "La maman peut penser que le suicide constitue une solution à la situation ou bien à la douleur morale"
     },
     {"name": "Anxiété",
-     "description": ""
+     "description": "l'anxiété devient excessive et nuit à la vie de tous les jours, on parle alors de troubles anxieux"
     },
   ];
   constructor() { }

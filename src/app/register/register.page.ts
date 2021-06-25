@@ -75,7 +75,6 @@ export class RegisterPage implements OnInit {
                   localStorage.setItem("id", this.user.user_id);
                   let jwt = this.user.token;
                 localStorage.setItem("token",jwt);
-                this.showmenu = true;
                 this.router.navigate(['/accueil']);
                 }
               );
